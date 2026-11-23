@@ -1,0 +1,153 @@
+{
+  "name": "Afternoon Walk",
+  "projectId": "f614f81a-7186-487f-a572-36d32c46ce77",
+  "description": "Afternoon Walk",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "[3.6.1]",
+    "UiPath.GSuite.Activities": "3.12.10",
+    "UiPath.Mail.Activities": "[2.12.10]",
+    "UiPath.System.Activities": "[26.10.0]",
+    "UiPath.Testing.Activities": "[25.10.3]",
+    "UiPath.UIAutomation.Activities": "[26.10.7]",
+    "UiPath.WebAPI.Activities": "[2.5.2]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.1",
+  "studioVersion": "26.10.0.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "NewtonsoftJson",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "saveToCloud": false
+  },
+  "expressionLanguage": "CSharp",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "4cacecc6-b573-489e-9767-915c8545970d",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "CheckWalkConditions.cs",
+      "uniqueId": "04fc3cb0-4c42-4440-8792-6ac8b1569d94",
+      "input": [
+        {
+          "name": "OpenWeatherCredentialAsset",
+          "type": "System.String",
+          "required": true,
+          "hasDefault": false
+        },
+        {
+          "name": "RecipientAsset",
+          "type": "System.String",
+          "required": true,
+          "hasDefault": false
+        },
+        {
+          "name": "AssetFolder",
+          "type": "System.String",
+          "required": true,
+          "hasDefault": false
+        },
+        {
+          "name": "TimeZoneId",
+          "type": "System.String",
+          "required": true,
+          "hasDefault": false
+        },
+        {
+          "name": "StateFilePath",
+          "type": "System.String",
+          "required": true,
+          "hasDefault": false
+        }
+      ],
+      "output": [
+        {
+          "name": "ShouldNotify",
+          "type": "System.Boolean"
+        },
+        {
+          "name": "Subject",
+          "type": "System.String"
+        },
+        {
+          "name": "Body",
+          "type": "System.String"
+        },
+        {
+          "name": "Today",
+          "type": "System.String"
+        },
+        {
+          "name": "Recipient",
+          "type": "System.String"
+        }
+      ]
+    },
+    {
+      "filePath": "AnnounceOnAlexa.cs",
+      "uniqueId": "1669989b-cd04-4fc6-96f0-43ca9b9e78bb",
+      "input": [
+        {
+          "name": "VoiceMonkeyCredentialAsset",
+          "type": "System.String",
+          "required": true,
+          "hasDefault": false
+        },
+        {
+          "name": "VoiceMonkeyDeviceAsset",
+          "type": "System.String",
+          "required": true,
+          "hasDefault": false
+        },
+        {
+          "name": "AssetFolder",
+          "type": "System.String",
+          "required": true,
+          "hasDefault": false
+        },
+        {
+          "name": "VoiceMonkeySpeechAsset",
+          "type": "System.String",
+          "required": true,
+          "hasDefault": false
+        }
+      ],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows",
+  "dotNetVersion": "net10.0"
+}

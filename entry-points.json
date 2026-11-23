@@ -1,0 +1,131 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "entryPoints": [
+    {
+      "filePath": "AnnounceOnAlexa.cs",
+      "uniqueId": "1669989b-cd04-4fc6-96f0-43ca9b9e78bb",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "VoiceMonkeyCredentialAsset": {
+            "type": "string"
+          },
+          "VoiceMonkeyDeviceAsset": {
+            "type": "string"
+          },
+          "AssetFolder": {
+            "type": "string"
+          },
+          "VoiceMonkeySpeechAsset": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "VoiceMonkeyCredentialAsset",
+          "VoiceMonkeyDeviceAsset",
+          "AssetFolder",
+          "VoiceMonkeySpeechAsset"
+        ]
+      }
+    },
+    {
+      "filePath": "CheckWalkConditions.cs",
+      "uniqueId": "04fc3cb0-4c42-4440-8792-6ac8b1569d94",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "OpenWeatherCredentialAsset": {
+            "type": "string"
+          },
+          "RecipientAsset": {
+            "type": "string"
+          },
+          "AssetFolder": {
+            "type": "string"
+          },
+          "TimeZoneId": {
+            "type": "string"
+          },
+          "StateFilePath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "OpenWeatherCredentialAsset",
+          "RecipientAsset",
+          "AssetFolder",
+          "TimeZoneId",
+          "StateFilePath"
+        ]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "ShouldNotify": {
+            "type": "boolean"
+          },
+          "Subject": {
+            "type": "string"
+          },
+          "Body": {
+            "type": "string"
+          },
+          "Today": {
+            "type": "string"
+          },
+          "Recipient": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "4cacecc6-b573-489e-9767-915c8545970d",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "in_TimeZoneId": {
+            "type": "string",
+            "x-default-expression": "\"America/Sao_Paulo\"",
+            "default": "America/Sao_Paulo"
+          },
+          "in_RecipientAsset": {
+            "type": "string",
+            "x-default-expression": "\"Recipient\"",
+            "default": "Recipient"
+          },
+          "in_OpenWeatherCredentialAsset": {
+            "type": "string",
+            "x-default-expression": "\"OpenWeatherMapApiKey\"",
+            "default": "OpenWeatherMapApiKey"
+          },
+          "in_VoiceMonkeyCredentialAsset": {
+            "type": "string",
+            "x-default-expression": "\"VoiceMonkeyApiKey\"",
+            "default": "VoiceMonkeyApiKey"
+          },
+          "in_VoiceMonkeyDeviceAsset": {
+            "type": "string",
+            "x-default-expression": "\"VoiceMonkeyDeviceID\"",
+            "default": "VoiceMonkeyDeviceID"
+          },
+          "in_VoiceMonkeySpeechAsset": {
+            "type": "string",
+            "x-default-expression": "\"VoiceMonkeySpeech\"",
+            "default": "VoiceMonkeySpeech"
+          },
+          "in_AssetFolder": {
+            "type": "string",
+            "x-default-expression": "\"AfternoonWalk\"",
+            "default": "AfternoonWalk"
+          }
+        },
+        "required": []
+      }
+    }
+  ]
+}

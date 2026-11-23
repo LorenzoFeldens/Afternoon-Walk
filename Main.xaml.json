@@ -1,0 +1,117 @@
+{
+  "DisplayName": "Main",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "in_Latitude",
+      "DisplayName": "in_Latitude",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "-29.681934157145328",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_Longitude",
+      "DisplayName": "in_Longitude",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "-53.80589382382679",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_FeelsLikeThresholdC",
+      "DisplayName": "in_FeelsLikeThresholdC",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "26.0",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_FinalCheckHour",
+      "DisplayName": "in_FinalCheckHour",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "20",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_TimeZoneId",
+      "DisplayName": "in_TimeZoneId",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "America/Sao_Paulo",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_RecipientAsset",
+      "DisplayName": "in_RecipientAsset",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "Recipient",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_OpenWeatherCredentialAsset",
+      "DisplayName": "in_OpenWeatherCredentialAsset",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "OpenWeatherMap_ApiKey",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_VoiceMonkeyCredentialAsset",
+      "DisplayName": "in_VoiceMonkeyCredentialAsset",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "VoiceMonkey_Token",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_VoiceMonkeyDevice",
+      "DisplayName": "in_VoiceMonkeyDevice",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}
