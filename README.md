@@ -19,8 +19,12 @@ Em cada execução:
 5. **Aviso:**
    - envia um e-mail em português pela conexão do Gmail no Integration Service;
    - grava a data de hoje no arquivo de estado;
-   - anuncia na Alexa pelo Voice Monkey o texto do asset `VoiceMonkeySpeech`. Se o anúncio falhar,
-     o e-mail já enviado vale e a falha fica só registrada no log.
+   - anuncia na Alexa pelo Voice Monkey o texto do asset `VoiceMonkeySpeech` seguido da sensação
+     térmica atual, por exemplo: *"Hora do passeio! - A temperatura é 23,5°C"*. Se o anúncio falhar,
+     o e-mail já enviado vale e a falha fica só registrada no log. Se `VoiceMonkeyDeviceID` ou
+     `VoiceMonkeySpeech` estiverem vazios, o anúncio é pulado.
+
+O passo a passo completo, com diagrama, está em **[WORKFLOW.md](WORKFLOW.md)**.
 
 > As verificações de previsão para os próximos 15 minutos e das últimas 12 horas do fluxo original
 > foram retiradas: elas exigem a assinatura *One Call 3.0* da OpenWeather.
@@ -45,7 +49,7 @@ Todos os assets ficam na pasta **AfternoonWalk** do Orchestrator.
 | `OpenWeatherMapApiKey` | Credential | chave no campo senha | Chave da API da OpenWeather |
 | `VoiceMonkeyApiKey` | Credential | token no campo senha | Token da API do Voice Monkey |
 | `VoiceMonkeyDeviceID` | Text | `alexa-sala` | Dispositivo do Voice Monkey |
-| `VoiceMonkeySpeech` | Text | `Hora do passeio!` | Texto falado pela Alexa |
+| `VoiceMonkeySpeech` | Text | `Hora do passeio!` | Texto falado pela Alexa (a sensação térmica é adicionada no final) |
 | `Recipient` | Text | `voce@exemplo.com` | Destinatário do e-mail |
 | `Latitude` | Text | `-29.6842` | Latitude do local |
 | `Longitude` | Text | `-53.8069` | Longitude do local |
