@@ -19,13 +19,17 @@
           },
           "VoiceMonkeySpeechAsset": {
             "type": "string"
+          },
+          "FeelsLike": {
+            "type": "string"
           }
         },
         "required": [
           "VoiceMonkeyCredentialAsset",
           "VoiceMonkeyDeviceAsset",
           "AssetFolder",
-          "VoiceMonkeySpeechAsset"
+          "VoiceMonkeySpeechAsset",
+          "FeelsLike"
         ]
       }
     },
@@ -76,6 +80,9 @@
             "type": "string"
           },
           "Recipient": {
+            "type": "string"
+          },
+          "FeelsLike": {
             "type": "string"
           }
         }

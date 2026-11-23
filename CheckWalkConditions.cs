@@ -29,7 +29,7 @@ namespace AfternoonWalk
         private static readonly HttpClient Http = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
 
         [Workflow]
-        public (bool ShouldNotify, string Subject, string Body, string Today, string Recipient) Execute(
+        public (bool ShouldNotify, string Subject, string Body, string Today, string Recipient, string FeelsLike) Execute(
             string OpenWeatherCredentialAsset,
             string RecipientAsset,
             string AssetFolder,
@@ -48,7 +48,7 @@ namespace AfternoonWalk
             if (File.Exists(StateFilePath) && File.ReadAllText(StateFilePath).Trim() == today)
             {
                 Log($"Notification already sent today ({today}).");
-                return (false, string.Empty, string.Empty, today, string.Empty);
+                return (false, string.Empty, string.Empty, today, string.Empty, string.Empty);
             }
 
             var startTime = AssetTime(StartHourAsset);
@@ -57,7 +57,7 @@ namespace AfternoonWalk
             if (localNow.TimeOfDay < startTime)
             {
                 Log($"Before {startTime:hh\\:mm}; nothing to check yet.");
-                return (false, string.Empty, string.Empty, today, string.Empty);
+                return (false, string.Empty, string.Empty, today, string.Empty, string.Empty);
             }
 
             var threshold = AssetNumber(TemperatureAsset);
@@ -80,7 +80,7 @@ namespace AfternoonWalk
             if (weatherId < 800)
             {
                 Log("Current weather is not clear; no notification.");
-                return (false, string.Empty, string.Empty, today, string.Empty);
+                return (false, string.Empty, string.Empty, today, string.Empty, string.Empty);
             }
 
             // 3. Temperature rule, or the final check of the day.
@@ -102,12 +102,12 @@ namespace AfternoonWalk
             else
             {
                 Log($"Still at or above {limit}°C and before {endText}; keep waiting.");
-                return (false, string.Empty, string.Empty, today, string.Empty);
+                return (false, string.Empty, string.Empty, today, string.Empty, string.Empty);
             }
 
             Log($"All checks passed: {subject}");
             var recipient = AssetText(RecipientAsset);
-            return (true, subject, body, today, recipient);
+            return (true, subject, body, today, recipient, tempBr);
         }
 
         // Orchestrator folder holding the assets; null = the folder the job runs in.

@@ -16,7 +16,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.1",
   "studioVersion": "26.10.0.0",
-  "projectVersion": "1.0.1",
+  "projectVersion": "1.0.2",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -110,6 +110,10 @@
         {
           "name": "Recipient",
           "type": "System.String"
+        },
+        {
+          "name": "FeelsLike",
+          "type": "System.String"
         }
       ]
     },
@@ -137,6 +141,12 @@
         },
         {
           "name": "VoiceMonkeySpeechAsset",
+          "type": "System.String",
+          "required": true,
+          "hasDefault": false
+        },
+        {
+          "name": "FeelsLike",
           "type": "System.String",
           "required": true,
           "hasDefault": false

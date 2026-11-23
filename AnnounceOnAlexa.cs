@@ -19,7 +19,7 @@ namespace AfternoonWalk
         private static readonly HttpClient Http = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
 
         [Workflow]
-        public void Execute(string VoiceMonkeyCredentialAsset, string VoiceMonkeyDeviceAsset, string AssetFolder, string VoiceMonkeySpeechAsset)
+        public void Execute(string VoiceMonkeyCredentialAsset, string VoiceMonkeyDeviceAsset, string AssetFolder, string VoiceMonkeySpeechAsset, string FeelsLike)
         {
             var folder = string.IsNullOrWhiteSpace(AssetFolder) ? null : AssetFolder;
             var Device = Convert.ToString(system.GetAsset(VoiceMonkeyDeviceAsset, folder))?.Trim();
@@ -29,12 +29,13 @@ namespace AfternoonWalk
                 return;
             }
 
-            var Speech = Convert.ToString(system.GetAsset(VoiceMonkeySpeechAsset, folder))?.Trim();
-            if (string.IsNullOrWhiteSpace(Speech))
+            var speechText = Convert.ToString(system.GetAsset(VoiceMonkeySpeechAsset, folder))?.Trim();
+            if (string.IsNullOrWhiteSpace(speechText))
             {
                 Log($"Asset '{VoiceMonkeySpeechAsset}' is empty; skipping the announcement.", LogLevel.Warn);
                 return;
             }
+            var Speech = $"{speechText} - A temperatura é {FeelsLike}°C";
 
             var (_, tokenSecure) = system.GetCredential(VoiceMonkeyCredentialAsset, folder);
             var token = new NetworkCredential(string.Empty, tokenSecure).Password;

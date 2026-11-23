@@ -115,6 +115,7 @@
       <Variable x:TypeArguments="x:String" Name="body" />
       <Variable x:TypeArguments="x:String" Name="today" />
       <Variable x:TypeArguments="x:String" Name="recipient" />
+      <Variable x:TypeArguments="x:String" Name="feelsLike" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -161,6 +162,9 @@
         </OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="Recipient">
           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">recipient</CSharpReference>
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="FeelsLike">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">feelsLike</CSharpReference>
         </OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="Today">
           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">today</CSharpReference>
@@ -239,6 +243,9 @@
                     </InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="VoiceMonkeyDeviceAsset">
                       <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">in_VoiceMonkeyDeviceAsset</CSharpValue>
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="FeelsLike">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">feelsLike</CSharpValue>
                     </InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="VoiceMonkeySpeechAsset">
                       <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">in_VoiceMonkeySpeechAsset</CSharpValue>
